@@ -2,7 +2,7 @@
 
 GHAAS RiverGIS V2.1
 Global Hydrologic Archive and Analysis System
-Copyright 1994-2014, UNH - CCNY/CUNY
+Copyright 1994-2015, UNH - CCNY/CUNY
 
 RGISFile.C
 
@@ -109,7 +109,7 @@ static void _RGISFileOpenFileCBK (Widget widget,RGISWorkspace *workspace,XmAnyCa
 	DBDataset *dataset = UIDataset ();
 	DBObjData *data;
 
-	if (_RGISFileSelect == NULL) _RGISFileSelect = UIFileSelectionCreate ((char *) "GHAAS Data",NULL,(char *) "*.gdb?",XmFILE_REGULAR);
+	if (_RGISFileSelect == NULL) _RGISFileSelect = UIFileSelectionCreate ((char *) "GHAAS Data",NULL,(char *) "*.gdb*",XmFILE_REGULAR);
 
 	if ((fileName = UIFileSelection (_RGISFileSelect,true)) == NULL) return;
 
@@ -179,7 +179,7 @@ static void _RGISFileSaveCBK (Widget widget,RGISWorkspace *workspace,XmAnyCallba
 	DBObjectLIST<DBObjMetaEntry>	*metaList = dataset->MetaList ();
 	DBObjMetaEntry *metaEntry;
 
-	if (_RGISFileSelect == NULL) _RGISFileSelect = UIFileSelectionCreate ((char *) "GHAAS Data",NULL,(char *) "*.gdb?",XmFILE_REGULAR);
+	if (_RGISFileSelect == NULL) _RGISFileSelect = UIFileSelectionCreate ((char *) "GHAAS Data",NULL,(char *) "*.gdb*",XmFILE_REGULAR);
 
 	fileName = data->FileName ();
 	if (strlen (fileName) == 0)
